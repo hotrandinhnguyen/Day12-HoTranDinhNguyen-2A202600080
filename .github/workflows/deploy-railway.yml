@@ -1,24 +1,20 @@
 name: Deploy To Railway
 
 on:
-  workflow_run:
-    workflows:
-      - CI
+  push:
     branches:
       - main
-    types:
-      - completed
+    paths:
+      - "my-production-agent/**"
+      - ".github/workflows/deploy-railway.yml"
 
 jobs:
   deploy:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.workflow_run.head_sha }}
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
