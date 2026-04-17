@@ -55,7 +55,8 @@ done
 ## Screenshots
 - [Deployment dashboard](screenshots/dashboard.png)
 - [Service running](screenshots/running.png)
-- [Test results](screenshots/test.png)
+- [Authentication and successful request test](screenshots/test1.png)
+- [Rate limiting test](screenshots/test2.png)
 
 ## Notes
 - This file intentionally uses placeholders instead of real secrets.
